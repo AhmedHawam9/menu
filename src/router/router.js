@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 //import website
 import indexPage from "../views/index";
+import productPage from "../views/product";
 
 // import NotFound from "./components/pages/error";
 
@@ -9,6 +10,7 @@ import indexPage from "../views/index";
 const routes = [
     // Website routes
     { path: "/:name", component: indexPage, name: "index" },
+    { path: "/product/:id", component: productPage, name: "product" },
     // { path: "/404", component: NotFound},
     // { path: "/:catchAll(.*)", redirect: "/404"},
 ];
