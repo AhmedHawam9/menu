@@ -1,5 +1,6 @@
 <template>
   <section class="products">
+    <div class="line" :style="{'background-color': setting.color}"></div>
     <div
       class="category_product"
       :id="'category_'+category.id"
@@ -7,7 +8,8 @@
       :key="index"
     >
       <h5 class="title_category">{{ category.title }}</h5>
-      <div
+      <router-link
+        :to="`/${user}/product/${product.id}`"
         class="product_card"
         v-for="(product, item) in category.products"
         :key="item"
@@ -18,7 +20,7 @@
             <p class="calories">{{ product.calories }} {{$t("calories")}}</p>
         </div>
         <img :src="product.image" :alt="product.title" class="image_product">
-      </div>
+      </router-link>
     </div>
   </section>
 </template>
@@ -40,8 +42,14 @@ export default {
       return response;
     });
   },
+  created() {
+    this.user = window.location.pathname.split("/")[1];
+  },
 };
 </script>
 
 <style>
+body .App .share:hover .socialicon {
+  top: 1.5rem;
+}
 </style>

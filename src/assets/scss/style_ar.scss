@@ -1,5 +1,19 @@
 body {
     &:lang(ar) {
         direction: rtl;
+        .App {
+            .header_cover {
+                .lang {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                }
+            }
+            .product_details {
+                .d-flex {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
     }
 }

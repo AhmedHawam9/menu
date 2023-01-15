@@ -2,25 +2,80 @@
   <div class="header_cover">
     <img :src="setting.cover" class="header_img" :alt="setting.id" />
     <!-- Start lang canvas -->
-    <button
-      class="btn lang"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasBottom"
-      aria-controls="offcanvasBottom"
-      :style="{color: setting.color}"
-    >
-      <span v-if="langStorage == 'en'">
-        {{ $t("english") }}
-      </span>
-      <span v-else-if="langStorage == 'ar'">
-        {{ $t("arabic") }}
-      </span>
-      <span v-else>
-        {{ $t("english") }}
-      </span>
-      <i class="fa-solid fa-earth-europe"></i>
-    </button>
+    <div class="d-flex justify-content-between align-items-start mt-1">
+      <button
+        class="btn lang"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom"
+        :style="{ color: setting.color }"
+      >
+        <i class="fa-solid fa-angle-down"></i>
+        <span v-if="langStorage == 'en'">
+          {{ $t("english") }}
+        </span>
+        <span v-else-if="langStorage == 'ar'">
+          {{ $t("arabic") }}
+        </span>
+        <span v-else>
+          {{ $t("english") }}
+        </span>
+        <i class="fa-solid fa-earth-europe"></i>
+      </button>
+      <div class="share mt-3" :style="{ color: color }">
+        <i class="fa-solid fa-share-nodes share_icon"></i>
+        <ul class="socialicon">
+          <!-- Facebook share this product -->
+          <li>
+            <ShareNetwork
+              network="facebook"
+              :title="setting.seller_title"
+              :url="$websiteUrl + `${url}`"
+            >
+              <i class="fab fa-facebook-f icon"></i>
+            </ShareNetwork>
+          </li>
+          <!-- Facebook share this product -->
+
+          <!-- Twitter share this product -->
+          <li>
+            <ShareNetwork
+              network="twitter"
+              :title="setting.seller_title"
+              :url="$websiteUrl + `${url}`"
+            >
+              <i class="fab fa-twitter icon"></i>
+            </ShareNetwork>
+          </li>
+          <!-- Twitter share this product -->
+
+          <!-- Messenger share this product -->
+          <li>
+            <ShareNetwork
+              network="email"
+              :title="setting.seller_title"
+              :url="$websiteUrl + `${url}`"
+            >
+              <i class="fa-solid fa-envelope icon"></i>
+            </ShareNetwork>
+          </li>
+          <!-- Messenger share this product -->
+
+          <!-- Whatsapp share this product -->
+          <li>
+            <ShareNetwork
+              network="whatsapp"
+              :title="setting.seller_title"
+              :url="$websiteUrl + `${url}`"
+            >
+              <i class="fab fa-whatsapp icon"></i>
+            </ShareNetwork>
+          </li>
+          <!-- Whatsapp share this product -->
+        </ul>
+      </div>
+    </div>
     <div
       class="offcanvas offcanvas-bottom"
       tabindex="-1"
@@ -29,7 +84,7 @@
     >
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasBottomLabel">
-          {{$t("choose_language")}}
+          {{ $t("choose_language") }}
         </h5>
         <button
           type="button"
@@ -48,8 +103,14 @@
             :iso="entry.flag"
             v-bind:squared="false"
           >
-            <flag :iso="entry.flag" v-bind:squared="false" />
-            {{ entry.title }}
+            <span class="lang_title">
+              <flag :iso="entry.flag" v-bind:squared="false" />
+              {{ entry.title }}
+            </span>
+            <i
+              class="fa-solid fa-check"
+              v-if="entry.language == langStorage"
+            ></i>
           </li>
         </ul>
       </div>
@@ -58,7 +119,7 @@
     <img :src="setting.image" :alt="user" class="logo_img" />
   </div>
   <div class="header_data">
-    <h4 class="name" style="color">{{ user }}</h4>
+    <h4 class="name" style="color">{{ setting.seller_title }}</h4>
     <div class="social_media">
       <a :href="setting.facebook" target="_blank" class="link">
         <i class="fa-brands fa-facebook"></i>
@@ -102,9 +163,8 @@ export default {
     },
   },
   created() {
+    this.url = window.location.pathname;
     this.user = window.location.pathname.split("/")[1];
-    const html = document.documentElement; // returns the html tag
-    html.setAttribute("lang", this.$i18n.locale);
   },
-}
+};
 </script>
