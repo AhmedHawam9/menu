@@ -9,7 +9,7 @@
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasBottom"
         aria-controls="offcanvasBottom"
-        :style="{ color: setting.color }"
+        :style="{ color: setting.color == '' ? '#000' : setting.color }"
       >
         <i class="fa-solid fa-angle-down"></i>
         <span v-if="langStorage == 'en'">
@@ -27,7 +27,7 @@
         <div class="dropdown">
           <a
             class="btn dropdown-toggle"
-            :style="{ color: setting.color }"
+            :style="{ color: setting.color == '' ? '#000' : setting.color }"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
@@ -133,19 +133,19 @@
   <div class="header_data">
     <h4 class="name" style="color">{{ setting.seller_title }}</h4>
     <div class="social_media">
-      <a :href="setting.facebook" target="_blank" class="link">
+      <a :href="setting.facebook" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-facebook"></i>
       </a>
-      <a :href="setting.twitter" target="_blank" class="link">
+      <a :href="setting.twitter" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-twitter"></i>
       </a>
-      <a :href="setting.whatsapp" target="_blank" class="link">
+      <a :href="setting.whatsapp" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
-      <a :href="setting.instagram" target="_blank" class="link">
+      <a :href="setting.instagram" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-instagram"></i>
       </a>
-      <a :href="setting.google_link" target="_blank" class="link">
+      <a :href="setting.google_link" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
         <i class="fa-solid fa-location-dot"></i>
       </a>
     </div>

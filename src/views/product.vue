@@ -6,7 +6,7 @@
         <div class="dropdown">
           <a
             class="btn dropdown-toggle"
-            :style="{ color: color }"
+            :style="{ color: color == '' ? '#000' : color }"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
@@ -70,7 +70,7 @@
       <router-link
         :to="`/${user}`"
         class="back"
-        :style="{ 'background-color': color }"
+        :style="{ 'background-color': color == '' ? '#000' : color }"
       >
         <i class="fa-solid fa-chevron-right"></i>
       </router-link>
@@ -78,7 +78,7 @@
     <img :src="product.image" :alt="product.title" />
     <h4 class="title">{{ product.title }}</h4>
     <p class="calories">{{ product.calories }} {{ $t("calories") }}</p>
-    <p class="price" :style="{ 'background-color': color }">
+    <p class="price" :style="{ 'background-color': color == '' ? '#000' : color }">
       {{ product.price }} {{ $t("sar") }}
     </p>
   </section>

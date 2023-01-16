@@ -1,6 +1,6 @@
 <template>
   <section class="products">
-    <div class="line" :style="{'background-color': setting.color}"></div>
+    <div class="line" :style="{ 'background-color': setting.color == '' ? '#000' : setting.color }"></div>
     <div
       class="category_product"
       :id="'category_'+category.id"
@@ -16,10 +16,10 @@
       >
         <div class="desctiption_product">
             <p class="title_product">{{ product.title }}</p>
-            <p class="price" :style="{'background-color': setting.color}">{{ product.price }} {{$t("sar")}}</p>
+            <p class="price" :style="{ 'background-color': setting.color == '' ? '#000' : setting.color }">{{ product.price }} {{$t("sar")}}</p>
             <p class="calories">{{ product.calories }} {{$t("calories")}}</p>
         </div>
-        <img :src="product.image" :alt="product.title" class="image_product">
+        <img :src="product.image" :alt="product.title" class="image_product" :style="{ 'background-color': setting.color == '' ? '#000' : setting.color }">
       </router-link>
     </div>
   </section>

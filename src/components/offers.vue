@@ -1,33 +1,30 @@
 <template>
-    <div class="offers">
-        <swiper
-            :slidesPerView="1"
-            :spaceBetween="30"
-            :slidesPerGroup="1"
-            :loop="true"
-            :autoplay="{
-              delay: 5000,
-              disableOnInteraction: false,
-            }"
-            :loopFillGroupWithBlank="true"
-            :modules="modules"
-            :breakpoints="{
-              300: {
-                slidesPerView: 1,
-                // slidesPerGroup: 1,
-                loopFillGroupWithBlank: false,
-              },
-            }"
-            class="mySwiper"
-          >
-            <swiper-slide
-              v-for="(offer, index) in offers"
-              :key="index"
-            >
-              <img :src="offer.image" :alt="offer.id">
-            </swiper-slide>
-          </swiper>
-    </div>
+  <div class="offers">
+    <swiper
+      :slidesPerView="1"
+      :spaceBetween="30"
+      :slidesPerGroup="1"
+      :loop="true"
+      :autoplay="{
+        delay: 5000,
+        disableOnInteraction: false,
+      }"
+      :loopFillGroupWithBlank="true"
+      :modules="modules"
+      :breakpoints="{
+        300: {
+          slidesPerView: 1,
+          // slidesPerGroup: 1,
+          loopFillGroupWithBlank: false,
+        },
+      }"
+      class="mySwiper"
+    >
+      <swiper-slide v-for="(offer, index) in offers" :key="index">
+        <img :src="offer.image" :alt="offer.id" />
+      </swiper-slide>
+    </swiper>
+  </div>
 </template>
 
 <script>
