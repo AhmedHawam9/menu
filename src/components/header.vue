@@ -131,7 +131,7 @@
     <img :src="setting.image" :alt="user" class="logo_img" />
   </div>
   <div class="header_data">
-    <h4 class="name" style="color">{{ setting.seller_title }}</h4>
+    <h4 class="name" style="color">{{ setting.seller_title == '' ? $t("menu") : setting.seller_title}}</h4>
     <div class="social_media">
       <a :href="setting.facebook" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-facebook"></i>

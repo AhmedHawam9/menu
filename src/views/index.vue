@@ -45,7 +45,7 @@ export default {
         favicon.href = this.favicon;
       }
       const titleEl = document.querySelector("head title");
-      titleEl.textContent = this.seller_title;
+      titleEl.textContent = this.seller_title == '' ? this.$t("menu") : this.seller_title;
       // console.log(this.found);
       return response;
     });
