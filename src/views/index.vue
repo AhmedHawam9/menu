@@ -2,6 +2,7 @@
   <NotFound v-if="found == false" />
   <div v-else-if="found == true">
     <HeaderMenu :setting="setting" />
+    <Offers :setting="setting" />
     <Category :setting="setting" />
     <Product :setting="setting" />
   </div>
@@ -10,6 +11,7 @@
 <script>
 import NotFound from "@/components/error.vue";
 import HeaderMenu from "@/components/header.vue";
+import Offers from "@/components/offers.vue";
 import Category from "@/components/category.vue";
 import Product from "@/components/product.vue";
 import { settingData } from "@/api/setting.js";
@@ -19,6 +21,7 @@ export default {
   components: {
     NotFound,
     HeaderMenu,
+    Offers,
     Category,
     Product,
   },

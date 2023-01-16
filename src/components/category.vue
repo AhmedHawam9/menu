@@ -1,5 +1,5 @@
 <template>
-  <div class="category" :class="{defalut: scrollPosition < 400, fixed: scrollPosition > 400}">
+  <div class="category" :class="{defalut: scrollPosition < 800, fixed: scrollPosition > 800}">
     <a :href="'#category_'+category.id" class="category_item" v-for="(category, index) in categories" :key="index">
         <img :src="category.image" class="category_image" :alt="category.title" :style="{'background-color': setting.color}">
         <p class="category_title">{{category.title}}</p>

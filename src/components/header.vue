@@ -23,57 +23,69 @@
         </span>
         <i class="fa-solid fa-earth-europe"></i>
       </button>
-      <div class="share mt-3" :style="{ color: color }">
-        <i class="fa-solid fa-share-nodes share_icon"></i>
-        <ul class="socialicon">
-          <!-- Facebook share this product -->
-          <li>
-            <ShareNetwork
-              network="facebook"
-              :title="setting.seller_title"
-              :url="$websiteUrl + `${url}`"
-            >
-              <i class="fab fa-facebook-f icon"></i>
-            </ShareNetwork>
-          </li>
-          <!-- Facebook share this product -->
+      <div class="share">
+        <div class="dropdown">
+          <a
+            class="btn dropdown-toggle"
+            :style="{ color: setting.color }"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-share-nodes share_icon"></i>
+          </a>
 
-          <!-- Twitter share this product -->
-          <li>
-            <ShareNetwork
-              network="twitter"
-              :title="setting.seller_title"
-              :url="$websiteUrl + `${url}`"
-            >
-              <i class="fab fa-twitter icon"></i>
-            </ShareNetwork>
-          </li>
-          <!-- Twitter share this product -->
+          <ul class="dropdown-menu socialicon">
+            <!-- Facebook share this product -->
+            <li>
+              <ShareNetwork
+                network="facebook"
+                :title="setting.seller_title"
+                :url="$websiteUrl + `${url}`"
+              >
+                <i class="fab fa-facebook-f icon"></i>
+              </ShareNetwork>
+            </li>
+            <!-- Facebook share this product -->
 
-          <!-- Messenger share this product -->
-          <li>
-            <ShareNetwork
-              network="email"
-              :title="setting.seller_title"
-              :url="$websiteUrl + `${url}`"
-            >
-              <i class="fa-solid fa-envelope icon"></i>
-            </ShareNetwork>
-          </li>
-          <!-- Messenger share this product -->
+            <!-- Twitter share this product -->
+            <li>
+              <ShareNetwork
+                network="twitter"
+                :title="setting.seller_title"
+                :url="$websiteUrl + `${url}`"
+              >
+                <i class="fab fa-twitter icon"></i>
+              </ShareNetwork>
+            </li>
+            <!-- Twitter share this product -->
 
-          <!-- Whatsapp share this product -->
-          <li>
-            <ShareNetwork
-              network="whatsapp"
-              :title="setting.seller_title"
-              :url="$websiteUrl + `${url}`"
-            >
-              <i class="fab fa-whatsapp icon"></i>
-            </ShareNetwork>
-          </li>
-          <!-- Whatsapp share this product -->
-        </ul>
+            <!-- Messenger share this product -->
+            <li>
+              <ShareNetwork
+                network="email"
+                :title="setting.seller_title"
+                :url="$websiteUrl + `${url}`"
+              >
+                <i class="fa-solid fa-envelope icon"></i>
+              </ShareNetwork>
+            </li>
+            <!-- Messenger share this product -->
+
+            <!-- Whatsapp share this product -->
+            <li>
+              <ShareNetwork
+                network="whatsapp"
+                :title="setting.seller_title"
+                :url="$websiteUrl + `${url}`"
+              >
+                <i class="fab fa-whatsapp icon"></i>
+              </ShareNetwork>
+            </li>
+            <!-- Whatsapp share this product -->
+          </ul>
+        </div>
       </div>
     </div>
     <div
