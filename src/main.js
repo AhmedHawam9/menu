@@ -43,7 +43,7 @@ app.use(i18n);
 app.use(router);
 const newLocal = lang;
 axios.defaults.headers.common["Accept-Language"] = newLocal;
-app.config.globalProperties.$websiteUrl = "https://elmenu.crazyideaco.com/";
+app.config.globalProperties.$websiteUrl = "https://elmenu.crazyideaco.com";
 axios.defaults.baseURL = "https://elmenu-portal.crazyideaco.com/api";
 app.config.globalProperties.axios = axios;
 
