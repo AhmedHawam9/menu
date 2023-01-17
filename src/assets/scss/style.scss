@@ -200,11 +200,12 @@ body {
         bottom: 0;
         right: 0;
         left: 0;
-        width: 100%;
+        width: 600px;
+        margin: 0 auto;
         height: fit-content;
         background-color: rgba(248, 248, 248, 0.87);
         margin-top: 0;
-        padding: 1rem 0 2rem;
+        padding: 1rem 0.75rem;
         transition: 0.7s ease-in-out;
         z-index: 99999;
       }
@@ -315,6 +316,11 @@ body {
       .title {
         text-align: start;
         font-family: "semibold";
+      }
+      .description {
+        font-family: "regular";
+        color: #000;
+        text-align: start;
       }
       .calories {
         text-align: start;

@@ -77,6 +77,7 @@
     </div>
     <img :src="product.image" :alt="product.title" />
     <h4 class="title">{{ product.title }}</h4>
+    <p class="description">{{ product.description }}</p>
     <p class="calories">{{ product.calories }} {{ $t("calories") }}</p>
     <p class="price" :style="{ 'background-color': color == '' ? '#000' : color }">
       {{ product.price }} {{ $t("sar") }}
