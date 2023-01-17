@@ -1,7 +1,7 @@
 <template>
   <div
     class="category"
-    :class="{ defalut: scrollPosition < 800, fixed: scrollPosition > 800 }"
+    :class="{ defalut: scrollPosition < 700, fixed: scrollPosition > 700 }"
   >
     <swiper
       :slidesPerView="4"
