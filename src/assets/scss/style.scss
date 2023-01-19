@@ -47,6 +47,12 @@ $PrimaryColor: #998148;
   color: #000;
   transform: scale(.5);
 }
+.category {
+  &.fixed {
+    padding: 0 0.75rem;
+    max-width: 575px;
+  }
+}
 body {
   &:lang(en) {
     direction: ltr;
@@ -467,6 +473,11 @@ body {
   html {
     height: auto;
     min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 991.98px) {
+  .category.fixed {
+    max-width: 100%;
   }
 }
 @media (min-width: 960px) {
