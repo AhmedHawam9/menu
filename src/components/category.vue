@@ -4,14 +4,14 @@
     :class="{ defalut: scrollPosition < 700, fixed: scrollPosition > 700 }"
   >
     <swiper
-      :slidesPerView="3.7"
+      :slidesPerView="3.5"
       :spaceBetween="30"
       :loop="true"
       :loopFillGroupWithBlank="true"
       :modules="modules"
       :breakpoints="{
         300: {
-          slidesPerView: 3.7,
+          slidesPerView: 3.5,
           // slidesPerGroup: 1,
           loopFillGroupWithBlank: false,
         },
