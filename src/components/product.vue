@@ -14,8 +14,9 @@
         v-for="(product, item) in category.products"
         :key="item"
       >
-        <div class="desctiption_product">
+        <div class="description_product">
             <p class="title_product">{{ product.title }}</p>
+            <p v-html="product.description.substring(0,50) +' ...'" class="text_product"></p>
             <p class="price" :style="{ 'background-color': setting.color == '' ? '#000' : setting.color }">{{ product.price }} {{$t("sar")}}</p>
             <p class="calories">{{ product.calories }} {{$t("calories")}}</p>
         </div>

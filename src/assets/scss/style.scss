@@ -273,11 +273,19 @@ body {
           justify-content: space-between;
           align-items: center;
           margin-bottom: 2rem;
-          .desctiption_product {
+          .description_product {
             .title_product {
               font-family: "semibold";
               color: #000;
+              margin-bottom: .5rem !important;
+              font-size: 1.1rem;
+              text-align: start;
+            }
+            .text_product {
+              font-family: "regular";
+              color: #000;
               margin-bottom: 1rem !important;
+              font-size: .9rem;
               text-align: start;
             }
             .price {
