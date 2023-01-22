@@ -136,17 +136,23 @@
       <a :href="setting.facebook" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-facebook"></i>
       </a>
-      <a :href="setting.twitter" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
+      <a :href="setting.twitter" target="_blank" :class="`${setting.twitter == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-twitter"></i>
       </a>
-      <a :href="setting.whatsapp" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
+      <a :href="setting.whatsapp" target="_blank" :class="`${setting.whatsapp == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
-      <a :href="setting.instagram" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
+      <a :href="setting.instagram" target="_blank" :class="`${setting.instagram == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-instagram"></i>
       </a>
-      <a :href="setting.google_link" target="_blank" :class="`${setting.facebook == '' ? 'd-none' : 'link'}`">
+      <a :href="setting.google_link" target="_blank" :class="`${setting.google_link == '' ? 'd-none' : 'link'}`">
         <i class="fa-solid fa-location-dot"></i>
+      </a>
+      <a :href="setting.snapchat" target="_blank" :class="`${setting.snapchat == '' ? 'd-none' : 'link'}`">
+        <i class="fa-brands fa-snapchat"></i>
+      </a>
+      <a :href="setting.tiktok" target="_blank" :class="`${setting.tiktok == '' ? 'd-none' : 'link'}`">
+        <i class="fa-brands fa-tiktok"></i>
       </a>
     </div>
   </div>
@@ -157,7 +163,7 @@ export default {
   props: ["setting"],
   data() {
     return {
-      langStorage: localStorage.getItem("lang"),
+      langStorage: localStorage.getItem("lang") == '' ? 'en' : localStorage.getItem("lang"),
       languages: [
         { flag: "us", language: "en", title: this.$i18n.t("english") },
         { flag: "eg", language: "ar", title: this.$i18n.t("arabic") },
