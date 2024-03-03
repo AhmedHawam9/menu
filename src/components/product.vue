@@ -17,8 +17,8 @@
         <div class="description_product">
             <p class="title_product">{{ product.title }}</p>
             <p v-html="product.description.substring(0,50) +' ...'" class="text_product"></p>
-            <p class="price" :style="{ 'background-color': setting.color == '' ? '#000' : setting.color }">{{ product.price }} {{$t("sar")}}</p>
-            <p class="calories">{{ product.calories }} {{$t("calories")}}</p>
+            <p class="price" :style="{ 'background-color': setting.color == '' ? '#000' : setting.color }">{{ product.price }} {{currency}}</p>
+            <p class="calories" v-if="product?.calories != 0">{{ product.calories }} {{$t("calories")}}</p>
         </div>
         <img :src="product.image" :alt="product.title" class="image_product" :style="{ 'background-color': setting.color == '' ? '#000' : setting.color }">
       </router-link>
@@ -28,18 +28,25 @@
 
 <script>
 import { productData } from "@/api/product.js";
+import { settingData } from "@/api/setting.js";
 
 export default {
   props: ["setting"],
   data() {
     return {
       products: [],
+      currency: ""
     };
   },
   mounted() {
     productData().then((response) => {
       this.products = response.data.data;
       //   console.log(this.categories);
+      return response;
+    });
+    settingData().then((response) => {
+      this.currency = response.data.data.currency;
+      // console.log(this.color)
       return response;
     });
   },

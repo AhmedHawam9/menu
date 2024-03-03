@@ -139,7 +139,7 @@
       <a :href="setting.twitter" target="_blank" :class="`${setting.twitter == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-twitter"></i>
       </a>
-      <a :href="setting.whatsapp" target="_blank" :class="`${setting.whatsapp == '' ? 'd-none' : 'link'}`">
+      <a :href="`https://wa.me/${setting.whatsapp}`" target="_blank" :class="`${setting.whatsapp == '' ? 'd-none' : 'link'}`">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
       <a :href="setting.instagram" target="_blank" :class="`${setting.instagram == '' ? 'd-none' : 'link'}`">
